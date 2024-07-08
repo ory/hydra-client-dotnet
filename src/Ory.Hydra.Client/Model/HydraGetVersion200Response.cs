@@ -27,27 +27,27 @@ using OpenAPIDateConverter = Ory.Hydra.Client.Client.OpenAPIDateConverter;
 namespace Ory.Hydra.Client.Model
 {
     /// <summary>
-    /// JSON Web Key Set
+    /// HydraGetVersion200Response
     /// </summary>
-    [DataContract(Name = "jsonWebKeySet")]
-    public partial class HydraJsonWebKeySet : IValidatableObject
+    [DataContract(Name = "getVersion_200_response")]
+    public partial class HydraGetVersion200Response : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="HydraJsonWebKeySet" /> class.
+        /// Initializes a new instance of the <see cref="HydraGetVersion200Response" /> class.
         /// </summary>
-        /// <param name="keys">List of JSON Web Keys  The value of the \&quot;keys\&quot; parameter is an array of JSON Web Key (JWK) values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired..</param>
-        public HydraJsonWebKeySet(List<HydraJsonWebKey> keys = default(List<HydraJsonWebKey>))
+        /// <param name="varVersion">The version of Ory Hydra..</param>
+        public HydraGetVersion200Response(string varVersion = default(string))
         {
-            this.Keys = keys;
+            this.VarVersion = varVersion;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// List of JSON Web Keys  The value of the \&quot;keys\&quot; parameter is an array of JSON Web Key (JWK) values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.
+        /// The version of Ory Hydra.
         /// </summary>
-        /// <value>List of JSON Web Keys  The value of the \&quot;keys\&quot; parameter is an array of JSON Web Key (JWK) values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.</value>
-        [DataMember(Name = "keys", EmitDefaultValue = false)]
-        public List<HydraJsonWebKey> Keys { get; set; }
+        /// <value>The version of Ory Hydra.</value>
+        [DataMember(Name = "version", EmitDefaultValue = false)]
+        public string VarVersion { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -62,8 +62,8 @@ namespace Ory.Hydra.Client.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class HydraJsonWebKeySet {\n");
-            sb.Append("  Keys: ").Append(Keys).Append("\n");
+            sb.Append("class HydraGetVersion200Response {\n");
+            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
